@@ -1,82 +1,67 @@
-# IndoFreq landing website
+# IndoFreq
 
-A standalone, buildless website for https://mfarhancode.github.io/indofreq-site/.
-Plain HTML, CSS and a small JavaScript file; no dependencies, backend, analytics or build step. The Flutter project and Firebase deployment are separate and unchanged.
+**Learn Indonesian, one word at a time.**
 
-## Publish on GitHub Pages
+IndoFreq is a free Indonesian vocabulary learning application built around flashcards, spaced repetition, and vocabulary quizzes. It helps learners discover common Indonesian words, practice what they've learned, and track their progress at their own pace.
 
-1. Create a **new public repository named `indofreq-site`** under `mfarhancode`. Free GitHub Pages is available for public repositories.
-2. Extract this ZIP. Upload the **contents** of the `indofreq-site` folder to the repository root. `index.html` must be at the root, not inside a second `indofreq-site` folder. Include `.nojekyll` (a dotfile); GitHub Pages will serve these static files without Jekyll processing.
-3. Commit the files to `main`.
-4. Open **Settings → Pages → Build and deployment**.
-5. Select **Deploy from a branch**, branch **main**, folder **/(root)**, then **Save**.
-6. Wait for the Pages workflow to succeed. Visit `https://mfarhancode.github.io/indofreq-site/` and open the Privacy policy link too.
+Available for **Android and Web**, with support for offline learning.
 
-No custom domain or paid service is required. Do not select or modify the Flutter app repository. Nothing has been deployed for you.
+### Try IndoFreq
 
-Official guide: https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site
+**[Visit Website](https://mfarhancode.github.io/indofreq-site/)** · **[Open Web App](https://indofreq.web.app/)** · **[Download for Android](https://github.com/mfarhancode/indofreq-site/releases/latest)**
 
-## Android download: one configuration file
+The Android app is distributed as an APK through GitHub Releases, without requiring Google Play.
 
-No verified public APK URL was available during preparation. The supplied app repository and Releases endpoint returned 404 to unauthenticated requests. It may be private or unavailable. The requested GitHub link is preserved; verify its visibility before launch.
+## Features
 
-The website intentionally displays **APK not available yet** and keeps the Web App link usable. The hero's Android button leads to this explanation. It does not point to an invented release or a broken APK.
+- **Vocabulary Flashcards** — Study Indonesian words with English translations and usage examples.
+- **Spaced Repetition** — Review vocabulary using a structured learning schedule.
+- **Vocabulary Quizzes** — Test your understanding with multiple-choice and typing questions.
+- **Searchable Dictionary** — Explore Indonesian vocabulary and search for words by Indonesian or English.
+- **Frequency Ranking** — Understand how words are ranked by frequency within the vocabulary dataset.
+- **Saved & Known Words** — Bookmark vocabulary and keep track of words you already know.
+- **Learning Progress** — Follow your daily goals, review activity, and learning streak.
+- **Offline Learning** — Continue studying without an internet connection after the necessary app resources are available.
+- **Local Data & Backups** — Your detailed learning progress is stored locally, with JSON export and import for backups.
 
-When your signed, tested APK is ready:
+## Screenshots
 
-1. Create a release in an appropriate **public** GitHub repository and attach the `.apk` as a **release asset**. Do not commit it into this website's source folder.
-2. Copy the actual asset download URL, not the release page URL.
-3. Edit `config.js`:
+Explore IndoFreq's interface and features on the **[official website](https://mfarhancode.github.io/indofreq-site/)**.
 
-```js
-window.INDOFREQ_SITE = Object.freeze({
-  apkUrl: "",     // Paste the real public GitHub Releases .apk URL here.
-  apkVersion: "", // Optional visible version, e.g. your actual release tag.
-  apkSize: ""     // Optional actual file size.
-});
-```
+The website showcases real screenshots of the Home screen, flashcards, quizzes, and dictionary.
 
-Accepted URL shapes (OWNER, REPO, TAG and FILE are placeholders):
-- `https://github.com/OWNER/REPO/releases/download/TAG/FILE.apk`
-- `https://github.com/OWNER/REPO/releases/latest/download/FILE.apk`
+## Available Platforms
 
-A valid URL activates both download links. Test the URL in a signed-out/private browser and confirm it downloads the intended APK. A syntactically valid URL does not prove an asset exists. If the app repository stays private, a release in this public website repository can distribute the APK without publishing app source. With JavaScript disabled, the page still works and presents the unavailable fallback; configure a static anchor too if you want APK downloading without JavaScript.
+| Platform | Access |
+|---|---|
+| Android | [Download APK](https://github.com/mfarhancode/indofreq-site/releases/latest) |
+| Web | [Launch IndoFreq](https://indofreq.web.app/) |
+| PWA | Open the Web App and install it using a supported browser |
 
-## Edit the website
+Android APKs are signed and distributed directly through GitHub Releases. Your device may ask for permission to install applications from outside Google Play.
 
-- `index.html`: page copy, supplied app and repository links.
-- `privacy.html`: privacy policy; update when implementation changes.
-- `styles.css`: colors, spacing, typography and responsive layouts.
-- `config.js`: Android asset URL and optional release metadata.
-- `script.js`: progressive mobile navigation and guarded download configuration.
-- `assets/indofreq-logo.png`: copied unchanged from `assets/branding/indofreq_logo.png` in the supplied app.
-- `assets/screenshots/`: actual live guest-mode PWA captures; see its README.
+## Accounts and Privacy
 
-All local asset paths are relative. Keep that convention for GitHub Pages subdirectory hosting. No root-relative `/assets/` paths, client-side routing, service worker, or Firebase settings are needed for this landing site.
+IndoFreq can be used without creating an account.
 
-## Preview and check
+- Guest mode allows local learning without signing in.
+- Optional Email/Password and Google authentication are supported.
+- Detailed learning progress is stored locally on your device.
+- Cloud synchronization is limited to aggregate learning summaries and is not a complete backup of your vocabulary progress.
+- JSON backup export and import let you manually transfer supported learning data.
 
-From the parent of this folder on your own computer:
+Read the **[Privacy Policy](https://mfarhancode.github.io/indofreq-site/privacy.html)** for more details.
 
-```sh
-python -m http.server 8000
-```
+## About This Project
 
-Visit `http://localhost:8000/indofreq-site/`. This tests the same subdirectory shape as Pages.
+IndoFreq is developed using Flutter, with Firebase for optional authentication, learning-summary storage, and web hosting.
 
-From inside `indofreq-site`:
+This repository contains the source code for the **IndoFreq landing website**, built using HTML, CSS, and JavaScript and hosted for free on GitHub Pages.
 
-```sh
-python tools/check_site.py
-node tools/check_download_config.cjs
-node --check script.js
-node --check config.js
-```
+The Flutter application is maintained separately.
 
-Node is optional for these development checks; visitors need only a browser. Check the page and policy at 320, 390, 768 and desktop widths; open and close the mobile menu with a keyboard; follow local navigation; verify a real APK download after configuration. See `VALIDATION.md` for completed checks and limits. `preview/` contains visual QA captures and may be omitted from deployment.
+---
 
-## Privacy and source basis
+**[Official Website](https://mfarhancode.github.io/indofreq-site/)** · **[Web App](https://indofreq.web.app/)** · **[Android Releases](https://github.com/mfarhancode/indofreq-site/releases)**
 
-Copy was checked against the supplied `indofreq_renamed_project(1).zip`, including `DEVELOPER_GUIDE.md`, local storage, authentication and `lib/cloud/sync/cloud_progress_snapshot.dart`.
-
-Firestore's four summary fields are total words learned, current streak, last active date and installed vocabulary version. Detailed learning records are local; account login is not full recovery. There is no claim of automatic full cloud backups or account deletion through the app. The policy also distinguishes hosting/provider logs from application analytics. Review it when changing the app or adding any website scripts, forms or analytics.
+Made for learners exploring the Indonesian language.
