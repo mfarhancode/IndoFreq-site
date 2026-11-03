@@ -1,0 +1,23 @@
+# Design and assets
+
+## Design reference
+
+The owner supplied the outdoor gear rental template by 8B (Kitfell):
+https://github.com/8bsite/outdoor-gear-rental-website-template
+
+This IndoFreq implementation uses that reference's National Park / Golos Text type pairing, light blue-grey ground, pill navigation and split compositions as its design direction. Its outdoor copy, photographs, rental controls, newsletter form and scroll animation system are not included. The reference MIT notice is retained in `LICENSE-reference.txt`.
+
+## Fonts
+
+The exact Latin webfont files linked by the supplied template are served locally:
+
+- National Park: Google Fonts, SIL Open Font License 1.1. License: assets/fonts/NationalPark-OFL.txt.
+- Golos Text: Google Fonts, SIL Open Font License 1.1. License: assets/fonts/GolosText-OFL.txt.
+
+Font binaries came from fonts.gstatic.com; license files came from the corresponding google/fonts repositories. The website makes no third-party font requests.
+
+## IndoFreq assets
+
+The original IndoFreq logo is unchanged. Flashcards, Dictionary and Word Details PNGs were supplied by the owner on 3 November 2026. Quiz is the earlier real guest-mode capture. No app UI was redrawn. See assets/screenshots/PROVENANCE.txt.
+
+The visible project credit is to the IndoFreq team. A GitHub account name inside the project repository URL is not an individual authorship claim.

@@ -1,0 +1,10 @@
+# Local setup notes, validation scripts and preview captures
+/.local-docs/
+# Keep the public repository introduction; other Markdown is local-only.
+*.md
+!/README.md
+# Editor and OS temporary files
+.DS_Store
+Thumbs.db
+.vscode/
+__pycache__/
