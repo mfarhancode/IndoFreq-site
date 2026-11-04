@@ -4,7 +4,7 @@ IndoFreq is an Indonesian vocabulary learning app with flashcards, quizzes, spac
 
 **Indo** stands for Indonesian; **Freq** refers to the frequency-based vocabulary dataset. New words follow its frequency order. A lower rank means more common within that data, not easier.
 
-[Open the web app](https://indofreq.web.app/) · [Website and Android downloads](https://mfarhancode.github.io/indofreq-site/) · [App repository](https://github.com/mfarhancode/indofreq)
+[Open the web app](https://indofreq.web.app/) · [Website and Android downloads](https://mfarhancode.github.io/IndoFreq-site/) · [App repository](https://github.com/mfarhancode/indofreq)
 
 ## Features
 
