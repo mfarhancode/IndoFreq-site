@@ -25,3 +25,22 @@
   const status = document.querySelector("[data-apk-status]");
   if (status) status.textContent = ["Direct download from GitHub Releases", config.apkVersion, config.apkSize].filter(value => typeof value === "string" && value.trim()).join(" · ");
 })();
+
+// Track IndoFreq download and web app button clicks
+document.addEventListener("click", function(event) {
+  const link = event.target.closest("a[href]");
+
+  if (!link || typeof gtag !== "function") {
+    return;
+  }
+
+  const url = link.href;
+
+  if (url.includes("/releases/") && url.includes("IndoFreq.apk")) {
+    gtag("event", "download_apk_click");
+  }
+
+  if (url.startsWith("https://indofreq.web.app")) {
+    gtag("event", "open_web_app_click");
+  }
+});
